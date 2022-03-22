@@ -34,16 +34,17 @@ $ventas = run_query_ventas();
                             <?php foreach ($ventas as $venta) : ?>
                                 <tr>
                                     <td scope="row"><?php echo $venta['fecha_venta'] ?></td>
-                                    <td scope="row"><a href="../celulares/editar?serial=<?php echo $venta['celulares_serial'] ?>"><?php echo $venta['celulares_serial'] ?></a></td>
+                                    <td scope="row"><a href="../celulares/editar.php?php echo $venta['celulares_serial'] ?>"><?php echo $venta['celulares_serial'] ?></a></td>
                                     <td scope="row"><?php echo $venta['pago'] ?></td>
                                     <td scope="row"><?php echo $venta['valor'] ?></td>
-                                    <td scope="row"><a href="../usuarios/editar?id=<?php echo $venta['usuarios_id'] ?>"><?php echo $venta['usuarios_id'] ?></a></td>
+                                    <td scope="row"><a href="../usuarios/editar.php?php echo $venta['usuarios_id'] ?>"><?php echo $venta['usuarios_id'] ?></a></td>
                                 </tr>
                             <?php endforeach; ?>
+                            
                         </tbody>
                     </table>
                     <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
-                        <a href="../dashboard?>" type="button" class="btn btn-danger btn-sm">Volver</a>
+                        <a href="../dashboard.php" type="button" class="btn btn-danger btn-sm">Volver</a>
                     </div>
 
                 </div>

@@ -44,8 +44,8 @@ $usuarios = run_query_usuarios();
                                     <td scope="row"><?php echo $usuario['email'] ?></td>
                                     <td scope="row">
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <a href="eliminar?id=<?php echo $usuario['id']; ?>" type="button" class="btn btn-danger btn-sm">Eliminar</a>
-                                            <a href="editar?id=<?php echo $usuario['id'] ?>" type="button" class="btn btn-warning btn-sm">Editar</a>
+                                            <a href="eliminar.php?id=<?php echo $usuario['id'] ?>" type="button" class="btn btn-danger btn-sm">Eliminar</a>
+                                            <a href="editar.php?id=<?php echo $usuario['id'] ?>" type="button" class="btn btn-warning btn-sm">Editar</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -54,7 +54,7 @@ $usuarios = run_query_usuarios();
                     </table>
                     <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
                         <a href="../dashboard.php" type="button" class="btn btn-danger btn-sm">Inicio</a>
-                        <a href="registro" type="button" class="btn btn-success btn-sm">Crear Usuario</a>
+                        <a href="registro.php" type="button" class="btn btn-success btn-sm">Crear Usuario</a>
                     </div>
 
                 </div>

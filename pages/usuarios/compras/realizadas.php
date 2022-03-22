@@ -42,7 +42,7 @@ $celulares = celulares_comprados($_SESSION['uid']);
                         </tbody>
                     </table>
                     <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
-                        <a href="../dashboard?>" type="button" class="btn btn-danger btn-sm">Volver</a>
+                        <a href="../dashboard.php" type="button" class="btn btn-danger btn-sm">Volver</a>
                     </div>
 
                 </div>

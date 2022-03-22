@@ -8,11 +8,16 @@ if (!isset($_SESSION['aid'])) {
 }
 // header('Location: index.php');
 
-//TODO: Continuar codigo
-$id = isset($_GET['serial']) ? $_GET['serial'] : 0;
-$celular = traer_celulares_por_id($id);
+//Capturar serial por get.
+$serial = isset($_GET['serial']) ? $_GET['serial'] : 0;
+//Traer Celular a borrar
+$celular = traer_celulares_por_id($serial);
+//Directorio de imagenes celulares subidos
 $directorio = "../../../assets/celulares/";
+//Archivo
 $archivo = $directorio . $celular['imagen'];
-// Borrar Archivo de Imagen
+// Borrado de archivo
 unlink($archivo);
-borrar_celular($id);
+//Borrar celular base de datos.
+borrar_celular($serial);
+

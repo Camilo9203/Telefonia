@@ -15,6 +15,7 @@ $administradores = run_query_administradores();
 <body class="d-flex h-100 bg-dark">
     <div class="container">
         <div class="row vh-100 justify-content-center align-items-center">
+            <!-- Alertas -->
             <?php if (isset($_GET['msg'])) : ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <?php echo $_GET['msg'] ?>
@@ -44,8 +45,8 @@ $administradores = run_query_administradores();
                                     <td scope="row"><?php echo $admin['email'] ?></td>
                                     <td scope="row">
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <a href="eliminar?id=<?php echo $admin['id']; ?>" type="button" class="btn btn-danger btn-sm">Eliminar</a>
-                                            <a href="editar?id=<?php echo $admin['id'] ?>" type="button" class="btn btn-warning btn-sm">Editar</a>
+                                            <a href="eliminar.php?id=<?php echo $admin['id']; ?>" type="button" class="btn btn-danger btn-sm">Eliminar</a>
+                                            <a href="editar.php?id=<?php echo $admin['id'] ?>" type="button" class="btn btn-warning btn-sm">Editar</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -54,7 +55,7 @@ $administradores = run_query_administradores();
                     </table>
                     <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
                         <a href="../dashboard.php" type="button" class="btn btn-danger btn-sm">Inicio</a>
-                        <a href="registro" type="button" class="btn btn-success btn-sm">Crear administrador</a>
+                        <a href="registro.php" type="button" class="btn btn-success btn-sm">Crear administrador</a>
                     </div>
 
                 </div>

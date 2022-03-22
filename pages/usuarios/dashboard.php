@@ -35,7 +35,7 @@ if (!isset($_SESSION['uid'])) {
 								<img src="../../assets/img/cart.svg" width="100" height="100" class=" card-img-top" alt="...">
 								<div class="card-body">
 									<p class="card-text">Ver detalles de compras realizadas</p>
-									<a href="compras/realizadas" class="btn btn-warning col-12">Compras</a>
+									<a href="compras/realizadas.php" class="btn btn-warning col-12">Compras</a>
 								</div>
 							</div>
 						</div>
@@ -46,13 +46,13 @@ if (!isset($_SESSION['uid'])) {
 								<img src="../../assets/img/admin.svg" width="100" height="100" class=" card-img-top" alt="...">
 								<div class="card-body">
 									<p class="card-text">Editar tu perfil</p>
-									<a href="perfil" class="btn btn-info col-12">Perfil</a>
+									<a href="perfil.php" class="btn btn-info col-12">Perfil</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<a class="btn btn-danger btn-sm" href="logout" role="button">Finalizar sesión</a>
+				<a class="btn btn-danger btn-sm" href="logout.php" role="button">Finalizar sesión</a>
 			</div>
 
 		</div>

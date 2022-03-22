@@ -49,7 +49,7 @@ $celulares = run_query_celulares_disponibles();
                         </tbody>
                     </table>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <a href="../dashboard" type="button" class="btn btn-danger btn-sm">Volver</a>
+                        <a href="../dashboard.php" type="button" class="btn btn-danger btn-sm">Volver</a>
                     </div>
 
                 </div>

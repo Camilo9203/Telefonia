@@ -97,7 +97,7 @@ if ($_FILES) {
 						<!-- Imagen -->
 						<div class="input-group p-2">
 							<label class="input-group-text" for="imagen">Imagen</label>
-							<input type="file" class="form-control" name="imagen" id="imagen" placeholder="Precio" required>
+							<input type="file" class="form-control" name="imagen" id="imagen" required>
 						</div>
 						<!-- Botones -->
 						<div class="btn-group col-12" role="group">

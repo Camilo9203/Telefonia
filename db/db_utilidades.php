@@ -6,16 +6,14 @@ function debug($value)
     var_dump($value);
     echo '</pre>';
 }
-
 // Credenciales MYSQL
 require_once('db_credenciales.php');
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE, DB_PORT);
-
+//Error de conexion
 if ($mysqli->connect_errno) {
     echo 'Error en la conexión';
     exit;
 }
-
 // Funciones CRUD Tabla Usuarios
 //Login 
 function get_usuario_by_email($email)
@@ -32,12 +30,11 @@ function crear_usuario($id, $nombre, $apellido, $telefono, $direccion, $email, $
     $clave = password_hash($clave, PASSWORD_BCRYPT);
     $sql = "INSERT INTO `usuarios`(`id`, `nombre`, `apellido`, `telefono`, `direccion`, `email`, `clave`) VALUES ('$id','$nombre','$apellido','$telefono','$direccion','$email','$clave')";
     $insertar = $mysqli->query($sql) or die($mysqli->error);
-
     if (!isset($insertar)) {
         echo "Error al ingresar datos";
     } else {
         $msg = 'Administrador registrado con exito!';
-        header('Location: index?msg=' . $msg);
+        header('Location: index.php?msg=' . $msg);
     }
 }
 // Read
@@ -96,7 +93,7 @@ function crear_admin($nombre, $apellido, $email, $clave)
         echo "Error al ingresar datos";
     } else {
         $msg = 'Administrador registrado con exito!';
-        header('Location: index?msg=' . $msg);
+        header('Location: index.php?msg=' . $msg);
     }
 }
 // Read
@@ -121,6 +118,12 @@ function actualizar_admin($id, $nombre, $apellido, $email, $clave)
     global $mysqli;
     $sql = "UPDATE administradores SET nombre = '{$nombre}', apellido = '{$apellido}', email = '{$email}', clave = '{$clave}' WHERE id = {$id}";
     $mysqli->query($sql);
+    if ($mysqli->error) {
+        echo  'Error ' . $mysqli->error;
+    } else {
+        $msg = 'Administrador actualizado con exito!';
+        header('Location: index.php?msg=' . $msg);
+    }
 }
 // Delete
 function borrar_administradores($id)
@@ -128,6 +131,12 @@ function borrar_administradores($id)
     global $mysqli;
     $sql = "DELETE FROM administradores WHERE id = {$id}";
     $mysqli->query($sql);
+    if ($mysqli->error) {
+        echo  'Error ' . $mysqli->error;
+    } else {
+        $msg = 'Administrador borrado con exito!';
+        header('Location: index.php?msg=' . $msg);
+    }
 }
 
 
@@ -143,7 +152,7 @@ function crear_celulares($serial, $marca, $modelo, $precio, $estado, $imagen, $a
         echo  'Error ' . $mysqli->error;
     } else {
         $msg = 'Celular registrado con exito!';
-        header('Location: index?msg=' . $msg);
+        header('Location: index.php?msg=' . $msg);
     }
 }
 // Read
@@ -168,13 +177,25 @@ function actualizar_celular($id, $serial, $marca, $modelo, $precio, $estado, $im
     global $mysqli;
     $sql = "UPDATE celulares SET serial = '{$serial}', marca = '{$marca}', modelo = '{$modelo}', precio = '{$precio}', estado = '{$estado}', imagen = '{$imagen}' WHERE id = {$id}";
     $mysqli->query($sql);
+    if ($mysqli->error) {
+        echo  'Error ' . $mysqli->error;
+    } else {
+        $msg = 'Celular borrado con exito!';
+        header('Location: index.php?msg=' . $msg);
+    }
 }
 // Delete
-function borrar_celular($id)
+function borrar_celular($serial)
 {
     global $mysqli;
-    $sql = "DELETE FROM celulares WHERE 'serial' = {$id}";
+    $sql = "DELETE FROM celulares WHERE serial = '{$serial}'";
     $mysqli->query($sql);
+    if ($mysqli->error) {
+        echo  'Error ' . $mysqli->error;
+    } else {
+        $msg = 'Celular borrado con exito!';
+        header('Location: index.php?msg=' . $msg);
+    }
 }
 
 //CRUD COMPRAR!!

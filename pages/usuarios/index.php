@@ -49,7 +49,7 @@ if ($_POST) {
 						<div class="btn-group col-12" role="group">
 							<a href="../../" type="button" class="btn btn-danger btn-sm">Cancelar</a>
 							<button type="submit" class="btn btn-success btn-sm">Ingresar</button>
-							<a href="registro" class="btn btn-info btn-sm">Registrarse</a>
+							<a href="registro.php" class="btn btn-info btn-sm">Registrarse</a>
 						</div>
 					</form>
 

@@ -15,6 +15,14 @@ $celulares = run_query_celulares();
 <body class="d-flex h-100 bg-dark">
     <div class="container">
         <div class="row vh-100 justify-content-center align-items-center">
+            <!-- Alertas -->
+            <?php if (isset($_GET['msg'])) : ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <?php echo $_GET['msg'] ?>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </div>
+            <?php endif ?>
             <!-- Tarjeta -->
             <div class="card">
                 <div class="card-body">
@@ -43,8 +51,8 @@ $celulares = run_query_celulares();
                                     <td scope="row"><?php echo $celular['estado'] ?></td>
                                     <td scope="row">
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <a href="eliminar?id=<?php echo $celular['serial']; ?>" type="button" class="btn btn-danger btn-sm">Eliminar</a>
-                                            <a href="editar?id=<?php echo $celular['serial'] ?>" type="button" class="btn btn-warning btn-sm">Editar</a>
+                                            <a href="eliminar.php?serial=<?php echo $celular['serial'] ?>" type="button" class="btn btn-danger btn-sm">Eliminar</a>
+                                            <a href="editar.php?serial=<?php echo $celular['serial'] ?>" type="button" class="btn btn-warning btn-sm">Editar</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -53,7 +61,7 @@ $celulares = run_query_celulares();
                     </table>
                     <div class="btn-group col-12" role="group" aria-label="Basic mixed styles example">
                         <a href="../dashboard.php" type="button" class="btn btn-danger btn-sm">Inicio</a>
-                        <a href="registro" type="button" class="btn btn-success btn-sm">Registrar Celular</a>
+                        <a href="registro.php" type="button" class="btn btn-success btn-sm">Registrar Celular</a>
                     </div>
 
                 </div>
